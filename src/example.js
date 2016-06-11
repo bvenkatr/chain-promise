@@ -1,8 +1,7 @@
 /**
  * Created by narendrasisodiya on 09/06/16.
  */
-
-console.clear();
+var chainPromise = require("./index.js");
 
 var asyncProcess1 = function (obj) {
   return new Promise(function (resolve) {
@@ -10,7 +9,7 @@ var asyncProcess1 = function (obj) {
       console.log("inside asyncProcess1", obj);
       obj.a = "a";
       resolve(obj);
-    }, 2000);
+    }, 0);
   })
 };
 var asyncProcess2 = function (obj) {
@@ -19,7 +18,7 @@ var asyncProcess2 = function (obj) {
       console.log("inside asyncProcess2", obj);
       obj.b = obj.a + "b";
       resolve(obj);
-    }, 2000);
+    }, 0);
   })
 };
 var asyncProcess3 = function (obj) {
@@ -28,7 +27,7 @@ var asyncProcess3 = function (obj) {
       console.log("inside asyncProcess3", obj);
       obj.c = obj.b + "c";
       resolve(obj);
-    }, 2000);
+    }, 0);
   })
 };
 var data = {};
